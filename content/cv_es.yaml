@@ -1,0 +1,149 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+cv:
+  name: Martín Cogo Belver
+  location: Godoy Cruz, Mendoza, Argentina
+  email: martincogo3@gmail.com
+  website: "https://mrtc101.github.io/Martin-Cogo-CV/index.es"
+  headline: Licenciado en Ciencias de la Computación
+  #photo: picture.jfif
+  social_networks:
+    - network: LinkedIn
+      username: martin-cogo
+    - network: GitHub
+      username: MrtC101
+
+  sections:
+    perfil:
+      - "Licenciado en Ciencias de la Computación, enfocado en IA y resolución de problemas en Visión Computacional. Experiencia en el diseño e implementación de sistemas de inferencia en tiempo real sobre streams de video, y entrenamiento de modelos de deep learning para aplicaciones de visión computacional."
+
+    experiencia_laboral:
+      - company: "[Mind Colab](https://mindcolab.com/)"
+        position: Computer Scientist
+        start_date: 2025-07
+        end_date: present
+        summary: >
+          Desarrollo de un motor de inferencia en tiempo real basado en pipelines de GStreamer,
+          capaz de procesar hasta 6 streams RTSP en paralelo a hasta 1080p y 25 FPS,
+          manteniendo frame drop < 1% bajo carga.
+          El sistema adopta una arquitectura multiproceso con IPC mediante memoria compartida,
+          orientada a minimizar copias innecesarias y reducir latencia.
+        highlights:
+          - "**Gestión de flujo**: Manejo de backpressure mediante colas en GStreamer para sostener throughput estable en escenarios de carga concurrente."
+          - "**Stack de aceleración**: Implementación en GPU utilizando NVIDIA DeepStream, buffers NVMM, kernels CUDA (Numba) y OpenCV con soporte CUDA para preprocesamiento."
+          - "**Optimización de inferencia**: Ejecución de modelos YOLO/PyTorch con transferencia de frames mayoritariamente en GPU, reduciendo overhead CPU↔GPU."
+          - "**Lifecycle y operación**: Soporte de restart controlado, hot-reload de configuración mediante DSL propio y graceful shutdown en entornos 24/7."
+          - "**Observabilidad**: Medición de latencia parcial por pipeline y monitoreo de uso de GPU, VRAM, RAM y CPU bajo carga sostenida."
+          - "**Impacto técnico**: Migración desde una solución CPU-bound a GPU, habilitando retransmisión de streams en tiempo real donde previamente no era viable."
+          - "[Ver Proyecto](https://mrtc101.github.io/stream-inference-engine/)"
+
+      - company: "[Municipalidad de Godoy Cruz](https://www.godoycruz.gob.ar/)"
+        position: Desarrollador Web
+        start_date: 2025-06
+        end_date: present
+        summary: >
+          Interfaz web para chat con LLM de uso interno para consulta semántica de normativas municipales.
+        highlights:
+          - "**Stack frontend**: React, Tailwind CSS, Bun."
+          - "[Ver Proyecto](https://github.com/MrtC101/digesto-semantic-chat)"
+
+      - company: "[Klari Inc.](https://klari.ai/)"
+        position: Científico de Datos (Pasantía, 200 hs)
+        start_date: 2025-01
+        end_date: 2025-02
+        summary: >
+          Diseño e implementación de un sistema de análisis semántico de conversaciones
+          generadas por un chatbot basado en LLM, orientado a extraer patrones temáticos
+          y generar reportes accionables sobre comportamiento y calidad de interacción.
+        highlights:
+          - "**Pipeline NLP**: Representación semántica de conversaciones mediante embeddings."
+          - "**Análisis temático**: Clustering no supervisado para extracción de patrones conversacionales."
+          
+      - company: "[Grupo CICDa](https://sites.google.com/view/cicda/home)"
+        position: Investigación de Tesis
+        start_date: 2024-01
+        end_date: 2025-01
+        summary: >
+          Desarrollo de un trabajo de investigación orientado a publicación, enfocado en la segmentación de imágenes satelitales
+          para la detección y estimación de daños en edificaciones posteriores a desastres naturales, mediante comparación temporal
+          de imágenes y modelos de deep learning con arquitectura siamesa.
+        highlights:
+        - "**Dataset xBD**: Entrenamiento sobre ~2400 imágenes satelitales VHR para tareas de Building Damage Assessment."
+        - "**Pipeline end-to-end**: Preprocesamiento, entrenamiento, inferencia y post-procesamiento para segmentación semántica y detección de cambios estructurales multitemporales."
+        - "**Modelado de visión**: Entrenamiento de modelos de deep learning para segmentación semántica de edificaciones post-desastre."
+        - "**Evaluación experimental**: Análisis cuantitativo mediante métricas de clasificación y segmentación (Precision, Recall, F1-score)."
+        - "**Cómputo**: Entrenamiento ejecutado en clúster HPC con GPU NVIDIA Tesla V100."
+        - "[Ver Proyecto](https://github.com/MrtC101/Thesis_DL_for_BDA)"
+    
+    educación:
+      - institution: Universidad Nacional de Cuyo
+        area: Licenciatura en Ciencias de la Computación
+        study_type: Grado (Promedio 8.7)
+        start_date: 2020
+        end_date: 2024
+
+    habilidades_técnicas:
+      - label: Lenguajes
+        details: Python, JavaScript, C/C++
+      - label: IA & ML
+        details: PyTorch, TensorFlow, Scikit-learn
+      - label: Visión & Datos
+        details: OpenCV, CUDA, Gstreamer, NVIDIA DeepStream, Pandas, NumPy
+      - label: Herramientas
+        details: Docker, Linux, Git, FastAPI, Bun, React, Tailwind
+
+    logros_y_idiomas:
+      - bullet: "Medalla a mejor promedio promocion 2024 de la carrera Licenciatura en ciencias de la computación."
+      - bullet: "Cuadro de honor (Top 15 promedios): Facultad de Ingeniería UNCUYO, 2024."
+      - bullet: "Inglés: Nivel B2 (Certificado por Cambridge)."
+
+design:
+  theme: classic
+  page:
+    top_margin: 1.2cm
+    bottom_margin: 1.2cm
+    left_margin: 1.3cm
+    right_margin: 1.2cm
+
+  header:
+    alignment: left
+    photo_width: 2.8cm
+    photo_position: right
+    space_below_name: 0.35cm
+
+  typography:
+      line_spacing: 0.7em
+      alignment: left
+      date_and_location_column_alignment: right
+      font_family:
+        body: Source Sans 3
+        name: Source Sans 3
+        headline: Source Sans 3
+        connections: Source Sans 3
+        section_titles: Source Sans 3
+      font_size:
+        body: 10pt
+        name: 28pt
+        headline: 10pt
+        connections: 9.5pt
+        section_titles: 1.25em
+      small_caps:
+        name: false
+        headline: false
+        connections: false
+        section_titles: false
+      bold:
+        name: true
+        headline: false
+        connections: false
+        section_titles: true
+
+  section_titles:
+    type: with_partial_line
+    space_above: 0.45cm
+    space_below: 0.25cm
+
+locale:
+  language: spanish
+
+settings:
+  current_date: "2025-12-29"
