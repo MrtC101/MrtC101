@@ -3,7 +3,7 @@ cv:
   name: Martín Cogo Belver
   location: Godoy Cruz, Mendoza, Argentina
   email: martincogo3@gmail.com
-  website: "https://mrtc101.github.io/Martin-Cogo-CV/index.es"
+  website: "https://mrtc101.github.io/MrtC101/"
   headline: Licenciado en Ciencias de la Computación
   #photo: picture.jfif
   social_networks:
@@ -21,6 +21,7 @@ cv:
         position: Computer Scientist
         start_date: 2025-07
         end_date: present
+        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, YOLO, Anomalib, OpenCV, CUDA, NVIDIA DeepStream, GStreamer, Python, SQLite, Redis, Docker, Linux"
         summary: >
           Desarrollo de un motor de inferencia en tiempo real basado en pipelines de GStreamer,
           capaz de procesar hasta 6 streams RTSP en paralelo a hasta 1080p y 25 FPS,
@@ -40,16 +41,23 @@ cv:
         position: Desarrollador Web
         start_date: 2025-06
         end_date: present
+        stack: "GeneXus, Java, Tomcat, Nginx, React, Tailwind, Bun"
         summary: >
-          Interfaz web para chat con LLM de uso interno para consulta semántica de normativas municipales.
+          Mantenimiento y extensión de una aplicación web legacy generada con GeneXus para el
+          pago de deudas y tasas municipales, incluyendo la refactorización de integraciones
+          con múltiples pasarelas de pago bancarias, y el desarrollo de una interfaz de chat
+          interna basada en LLM para consulta semántica de normativas municipales.
         highlights:
-          - "**Stack frontend**: React, Tailwind CSS, Bun."
+          - "**Mantenimiento legacy**: Mantenimiento y resolución de tickets sobre código Java generado con GeneXus, dentro del módulo de pago de deudas y tasas municipales."
+          - "**Integraciones de pago**: Refactorización de integraciones con múltiples APIs de pasarelas de pago bancarias (Banco Macro, Mercado Pago, ePagos, XNet, Pago Fácil, Supervielle) en el flujo de envío de montos y transacciones."
+          - "**Interfaz de chat con LLM**: Desarrollo de una interfaz web de chat interna para consulta semántica de normativas municipales mediante un LLM."
           - "[Ver Proyecto](https://github.com/MrtC101/digesto-semantic-chat)"
 
       - company: "[Klari Inc.](https://klari.ai/)"
         position: Científico de Datos (Pasantía, 200 hs)
         start_date: 2025-01
         end_date: 2025-02
+        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, OpenCV, YOLO, Anomalib, Numba, FastAPI, MongoDB"
         summary: >
           Diseño e implementación de un sistema de análisis semántico de conversaciones
           generadas por un chatbot basado en LLM, orientado a extraer patrones temáticos
@@ -62,6 +70,7 @@ cv:
         position: Investigación de Tesis
         start_date: 2024-01
         end_date: 2025-01
+        stack: "JavaScript, Python, PyTorch, Pandas, Scikit-learn, Linux, Git, OpenCV"
         summary: >
           Desarrollo de un trabajo de investigación orientado a publicación, enfocado en la segmentación de imágenes satelitales
           para la detección y estimación de daños en edificaciones posteriores a desastres naturales, mediante comparación temporal
@@ -74,22 +83,27 @@ cv:
         - "**Cómputo**: Entrenamiento ejecutado en clúster HPC con GPU NVIDIA Tesla V100."
         - "[Ver Proyecto](https://github.com/MrtC101/Thesis_DL_for_BDA)"
     
+    habilidades_técnicas:
+      - label: Lenguajes
+        key: languages
+        details: Python, JavaScript, TypeScript, C++, Rust
+      - label: IA & ML
+        details: PyTorch, TensorFlow, Scikit-learn, YOLO, Anomalib
+      - label: Visión & Datos
+        details: OpenCV, CUDA, Numba, Gstreamer, Pandas, NumPy
+      - label: Backend & Web
+        details: FastAPI, Java, Tomcat, GeneXus, Nginx, React, Tailwind, Bun
+      - label: Bases de Datos
+        details: SQLite, Redis, MongoDB
+      - label: Herramientas
+        details: Docker, Linux, Git
+
     educación:
       - institution: Universidad Nacional de Cuyo
         area: Licenciatura en Ciencias de la Computación
         study_type: Grado (Promedio 8.7)
         start_date: 2020
         end_date: 2024
-
-    habilidades_técnicas:
-      - label: Lenguajes
-        details: Python, JavaScript, C/C++
-      - label: IA & ML
-        details: PyTorch, TensorFlow, Scikit-learn
-      - label: Visión & Datos
-        details: OpenCV, CUDA, Gstreamer, NVIDIA DeepStream, Pandas, NumPy
-      - label: Herramientas
-        details: Docker, Linux, Git, FastAPI, Bun, React, Tailwind
 
     logros_y_idiomas:
       - bullet: "Medalla a mejor promedio promocion 2024 de la carrera Licenciatura en ciencias de la computación."
@@ -98,6 +112,10 @@ cv:
 
 design:
   theme: classic
+  sections:
+    show_time_spans_in:
+      - Experiencia Laboral
+
   page:
     top_margin: 1.2cm
     bottom_margin: 1.2cm
@@ -144,6 +162,3 @@ design:
 
 locale:
   language: spanish
-
-settings:
-  current_date: "2025-12-29"

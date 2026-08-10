@@ -1,0 +1,32 @@
+// Maps technical-skill labels as written in the CV yaml to the icon slug
+// registered by src/components/Stack.tsx (filename in src/assets, no extension).
+// Skills without a matching asset simply render without an icon.
+export const SKILL_ICON_SLUGS: Record<string, string> = {
+  Python: 'python',
+  'C/C++': 'c-plusplus',
+  'C++': 'c-plusplus',
+  PyTorch: 'pytorch',
+  'Scikit-learn': 'scikit-learn',
+  OpenCV: 'opencv',
+  GStreamer: 'gstreamer',
+  'NVIDIA DeepStream': 'nvidia',
+  Pandas: 'pandas',
+  NumPy: 'numpy',
+  Docker: 'docker',
+  Linux: 'linux',
+  Git: 'git',
+  FastAPI: 'fastapi',
+  Bun: 'bun',
+  React: 'react',
+  Tailwind: 'tailwind-css',
+  JavaScript: 'javascript',
+  TypeScript: 'typescript',
+  Rust: 'rust',
+  SQLite: 'sqlite',
+  Redis: 'redis',
+  MongoDB: 'mongodb',
+  GeneXus: 'GeneXus',
+  Java: 'java',
+  Tomcat: 'tomcat',
+  Nginx: 'nginx',
+}

@@ -10,6 +10,9 @@ const experienceEntrySchema = z.object({
   position: z.string(),
   start_date: z.string(),
   end_date: z.string(),
+  // Comma-separated, same convention as technical_skills[].details — rendercv's
+  // PDF templater breaks on list-valued extra fields, so this must stay a string.
+  stack: z.string().optional(),
   summary: z.string(),
   highlights: z.array(z.string()),
 })
@@ -25,6 +28,9 @@ const educationEntrySchema = z.object({
 const technicalSkillGroupSchema = z.object({
   label: z.string(),
   details: z.string(),
+  // Stable, non-localized identifier for groups the UI treats specially
+  // (e.g. rendering the languages group as proficiency bars instead of badges).
+  key: z.string().optional(),
 })
 
 const achievementSchema = z.object({
