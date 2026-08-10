@@ -1,5 +1,10 @@
 import { useEffect, useState, type Dispatch } from 'react'
-import { EnvelopeSimpleIcon, MapPinIcon, TranslateIcon } from '@phosphor-icons/react'
+import {
+  DownloadSimpleIcon,
+  EnvelopeSimpleIcon,
+  MapPinIcon,
+  TranslateIcon,
+} from '@phosphor-icons/react'
 import './App.css'
 import { parseContent, type Lang } from './lib/parser'
 import { getSocialConfig } from './lib/social'
@@ -41,13 +46,28 @@ function App() {
     <div className="mx-auto min-h-svh max-w-5xl px-4 py-10 md:px-8 md:py-16">
       <div className="mb-8 flex items-center justify-between gap-2">
         <BuiltWithClaude label={strings.builtWithClaude} />
-        <Button variant="outline" onClick={() => setLang(lang === 'en' ? 'es' : 'en')}>
-          <TranslateIcon size={16} />
-          {strings.langToggle}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={
+              <a href={`${import.meta.env.BASE_URL}Martin_Cogo_CV_${lang}.pdf`} download />
+            }
+          >
+            <DownloadSimpleIcon size={16} />
+            {strings.downloadCv}
+          </Button>
+          <Button variant="outline" onClick={() => setLang(lang === 'en' ? 'es' : 'en')}>
+            <TranslateIcon size={16} />
+            {strings.langToggle}
+          </Button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-[16rem_1fr]">
+      <div
+        key={lang}
+        className="grid grid-cols-1 gap-x-12 gap-y-12 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-300 motion-safe:ease-out lg:grid-cols-[16rem_1fr]"
+      >
         <aside className="lg:sticky lg:top-10 lg:self-start">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">{content.cv.name}</h1>
           <p className="mt-2 text-primary">{content.cv.headline}</p>

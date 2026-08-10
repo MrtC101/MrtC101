@@ -13,6 +13,8 @@ const experienceEntrySchema = z.object({
   // Comma-separated, same convention as technical_skills[].details — rendercv's
   // PDF templater breaks on list-valued extra fields, so this must stay a string.
   stack: z.string().optional(),
+  // Filename (no extension) of a logo registered in src/lib/logos.ts.
+  logo: z.string().optional(),
   summary: z.string(),
   highlights: z.array(z.string()),
 })
@@ -23,6 +25,7 @@ const educationEntrySchema = z.object({
   study_type: z.string(),
   start_date: z.union([z.string(), z.number()]),
   end_date: z.union([z.string(), z.number()]),
+  logo: z.string().optional(),
 })
 
 const technicalSkillGroupSchema = z.object({

@@ -4,18 +4,27 @@ import { formatDateRange, formatDuration } from '@/lib/date'
 import { renderInline } from '@/lib/markdown'
 import { TimelineEntry } from '@/components/cv/TimelineEntry'
 import { SkillBadge } from '@/components/cv/SkillBadge'
+import { LOGOS } from '@/lib/logos'
 
 type ExperienceEntry = CvContent['cv']['sections']['experience'][number]
 
 export function ExperienceItem({ entry, lang }: { entry: ExperienceEntry; lang: Lang }) {
   const duration = formatDuration(entry.start_date, entry.end_date, lang)
+  const logo = entry.logo ? LOGOS[entry.logo] : undefined
 
   return (
     <TimelineEntry>
       <div className="mb-2 flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
-        <h3 className="text-lg font-semibold text-foreground">
+        <h3 className="flex items-center gap-2.5 text-lg font-semibold text-foreground">
+          {logo && (
+            <img
+              src={logo}
+              alt=""
+              className="size-6 shrink-0 rounded-md border border-border object-cover"
+            />
+          )}
           {renderInline(entry.company)}
-          <span className="font-normal text-muted-foreground"> · {entry.position}</span>
+          <span className="font-normal text-muted-foreground">· {entry.position}</span>
         </h3>
         <span className="shrink-0 text-sm text-muted-foreground">
           {formatDateRange(entry.start_date, entry.end_date, lang)}

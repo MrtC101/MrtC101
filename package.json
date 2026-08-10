@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "pdf:es": "cd tools/cv && uv run rendercv render ../../src/assets/cv_es.yaml --output-folder .rendercv_output --pdf-path ../public/cv_es.pdf -nomd -nohtml -nopng && cd ../..",
-    "pdf:en": "cd tools/cv && uv run rendercv render ../../src/assets/cv_en.yaml --output-folder .rendercv_output --pdf-path ../public/cv_en.pdf -nomd -nohtml -nopng && cd ../..",
+    "pdf:es": "cd tools/cv && uv run rendercv render ../../src/assets/cv_es.yaml --output-folder .rendercv_output --pdf-path ../../public/Martin_Cogo_CV_es.pdf -nomd -nohtml -nopng && cd ../..",
+    "pdf:en": "cd tools/cv && uv run rendercv render ../../src/assets/cv_en.yaml --output-folder .rendercv_output --pdf-path ../../public/Martin_Cogo_CV_en.pdf -nomd -nohtml -nopng && cd ../..",
     "pdf": "bun run pdf:es && bun run pdf:en"
   },
   "dependencies": {

@@ -51,7 +51,7 @@ function labelFor(slug: string) {
 }
 
 const badgeVariants = cva(
-  'inline-flex items-center gap-1.5 rounded-none border border-border bg-background font-medium transition-colors [&_img]:shrink-0 hover:border-primary hover:text-primary',
+  'inline-flex items-center gap-1.5 rounded-none border border-border bg-background font-medium transition-[color,border-color,transform] duration-200 [&_img]:shrink-0 hover:border-primary hover:text-primary motion-safe:hover:-translate-y-0.5',
   {
     variants: {
       size: {

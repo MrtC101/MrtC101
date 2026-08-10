@@ -21,6 +21,7 @@ cv:
         position: Computer Scientist
         start_date: 2025-07
         end_date: present
+        logo: mindcolab_logo
         stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, NVIDIA DeepStream, GStreamer, Python, SQLite, Redis, Docker, Linux"
         summary: >
           Desarrollo de un motor de inferencia en tiempo real basado en pipelines de GStreamer,
@@ -35,12 +36,12 @@ cv:
           - "**Lifecycle y operación**: Soporte de restart controlado, hot-reload de configuración mediante DSL propio y graceful shutdown en entornos 24/7."
           - "**Observabilidad**: Medición de latencia parcial por pipeline y monitoreo de uso de GPU, VRAM, RAM y CPU bajo carga sostenida."
           - "**Impacto técnico**: Migración desde una solución CPU-bound a GPU, habilitando retransmisión de streams en tiempo real donde previamente no era viable."
-          - "[Ver Proyecto](https://mrtc101.github.io/stream-inference-engine/)"
 
       - company: "[Municipalidad de Godoy Cruz](https://www.godoycruz.gob.ar/)"
         position: Desarrollador Web
         start_date: 2025-06
         end_date: present
+        logo: municipalidad_de_godoy_cruz_logo
         stack: "GeneXus, Java, Tomcat, Nginx, React, Tailwind, Bun"
         summary: >
           Mantenimiento y extensión de una aplicación web legacy generada con GeneXus para el
@@ -57,6 +58,7 @@ cv:
         position: Científico de Datos (Pasantía, 200 hs)
         start_date: 2025-01
         end_date: 2025-02
+        logo: klariai_logo
         stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, OpenCV, Ultralytics, Anomalib, Numba, FastAPI, MongoDB"
         summary: >
           Diseño e implementación de un sistema de análisis semántico de conversaciones
@@ -70,6 +72,7 @@ cv:
         position: Investigación de Tesis
         start_date: 2024-01
         end_date: 2025-01
+        logo: facultad_de_ingenieria_uncuyo_logo
         stack: "JavaScript, Python, PyTorch, Pandas, Scikit-learn, Linux, Git, OpenCV"
         summary: >
           Desarrollo de un trabajo de investigación orientado a publicación, enfocado en la segmentación de imágenes satelitales
@@ -104,6 +107,7 @@ cv:
         study_type: Grado (Promedio 8.7)
         start_date: 2020
         end_date: 2024
+        logo: facultad_de_ingenieria_uncuyo_logo
 
     logros_y_idiomas:
       - bullet: "Medalla a mejor promedio promocion 2024 de la carrera Licenciatura en ciencias de la computación."

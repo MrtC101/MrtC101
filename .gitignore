@@ -14,6 +14,9 @@ dist-ssr
 *.local
 .claude
 
+# rendercv intermediate build output (tools/cv/pdf scripts)
+src/assets/.rendercv_output/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
