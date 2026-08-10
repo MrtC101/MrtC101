@@ -8,6 +8,7 @@ import { renderInline } from './lib/markdown'
 import { Button } from '@/components/ui/button'
 import { BuiltWithClaude } from '@/components/cv/BuiltWithClaude'
 import { Section } from '@/components/cv/Section'
+import { SidebarSection } from '@/components/cv/SidebarSection'
 import { SkillBadge } from '@/components/cv/SkillBadge'
 import { LanguageProficiency } from '@/components/cv/LanguageProficiency'
 import { ExperienceItem } from '@/components/cv/ExperienceItem'
@@ -37,7 +38,7 @@ function App() {
   const strings = ui[lang]
 
   return (
-    <div className="mx-auto min-h-svh max-w-3xl px-4 py-10 md:px-8 md:py-16">
+    <div className="mx-auto min-h-svh max-w-5xl px-4 py-10 md:px-8 md:py-16">
       <div className="mb-8 flex items-center justify-between gap-2">
         <BuiltWithClaude label={strings.builtWithClaude} />
         <Button variant="outline" onClick={() => setLang(lang === 'en' ? 'es' : 'en')}>
@@ -46,90 +47,96 @@ function App() {
         </Button>
       </div>
 
-      <header className="border-b border-border pb-10 md:pb-12">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          {content.cv.name}
-        </h1>
-        <p className="mt-2 text-lg text-primary">{content.cv.headline}</p>
+      <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-[16rem_1fr]">
+        <aside className="lg:sticky lg:top-10 lg:self-start">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">{content.cv.name}</h1>
+          <p className="mt-2 text-primary">{content.cv.headline}</p>
 
-        <div className="mt-6 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
-          <ContactLink icon={MapPinIcon}>{content.cv.location}</ContactLink>
-          <ContactLink icon={EnvelopeSimpleIcon} href={`mailto:${content.cv.email}`}>
-            {content.cv.email}
-          </ContactLink>
-          {content.cv.social_networks.map((social) => {
-            const config = getSocialConfig(social.network)
-            if (!config) return null
-            return (
-              <ContactLink
-                key={social.network}
-                icon={config.icon}
-                href={config.href(social.username)}
-              >
-                {config.label(social.username)}
-              </ContactLink>
-            )
-          })}
-        </div>
-      </header>
+          <div className="mt-6 space-y-2.5 text-sm">
+            <ContactLink icon={MapPinIcon}>{content.cv.location}</ContactLink>
+            <ContactLink icon={EnvelopeSimpleIcon} href={`mailto:${content.cv.email}`}>
+              {content.cv.email}
+            </ContactLink>
+            {content.cv.social_networks.map((social) => {
+              const config = getSocialConfig(social.network)
+              if (!config) return null
+              return (
+                <ContactLink
+                  key={social.network}
+                  icon={config.icon}
+                  href={config.href(social.username)}
+                >
+                  {config.label(social.username)}
+                </ContactLink>
+              )
+            })}
+          </div>
 
-      <Section title={titles.profile}>
-        {sections.profile.map((paragraph) => (
-          <p key={paragraph} className="leading-relaxed text-foreground/80">
-            {renderInline(paragraph)}
-          </p>
-        ))}
-      </Section>
-
-      <Section title={titles.experience}>
-        <div className="space-y-10">
-          {sections.experience.map((entry) => (
-            <ExperienceItem key={`${entry.company}-${entry.start_date}`} entry={entry} lang={lang} />
-          ))}
-        </div>
-      </Section>
-
-      <Section title={titles.technical_skills}>
-        <div className="space-y-5">
-          {sections.technical_skills.map((group) => (
-            <div key={group.label}>
-              <h3 className="mb-2.5 text-sm font-semibold text-foreground">{group.label}</h3>
-              {group.key === 'languages' ? (
-                <LanguageProficiency
-                  languages={group.details.split(', ')}
-                  levelLabels={proficiencyLevels[lang]}
-                  note={strings.languageConfidenceNote}
-                />
-              ) : (
-                <div className="flex flex-wrap gap-2">
-                  {group.details.split(', ').map((skill) => (
-                    <SkillBadge key={skill} label={skill} />
-                  ))}
+          <SidebarSection title={titles.technical_skills}>
+            <div className="space-y-5">
+              {sections.technical_skills.map((group) => (
+                <div key={group.label}>
+                  <h4 className="mb-2 text-sm font-semibold text-foreground">{group.label}</h4>
+                  {group.key === 'languages' ? (
+                    <LanguageProficiency
+                      languages={group.details.split(', ')}
+                      levelLabels={proficiencyLevels[lang]}
+                      note={strings.languageConfidenceNote}
+                    />
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      {group.details.split(', ').map((skill) => (
+                        <SkillBadge key={skill} label={skill} size="sm" />
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
-        </div>
-      </Section>
+          </SidebarSection>
 
-      <Section title={titles.education}>
-        <div className="space-y-6">
-          {sections.education.map((entry) => (
-            <EducationItem key={entry.institution} entry={entry} lang={lang} />
-          ))}
-        </div>
-      </Section>
+          <SidebarSection title={titles.education}>
+            <div className="space-y-6">
+              {sections.education.map((entry) => (
+                <EducationItem key={entry.institution} entry={entry} lang={lang} />
+              ))}
+            </div>
+          </SidebarSection>
 
-      <Section title={titles.achievements_and_languages}>
-        <ul className="space-y-2">
-          {sections.achievements_and_languages.map((achievement) => (
-            <li key={achievement.bullet} className="flex gap-2 leading-relaxed text-foreground/80">
-              <span className="mt-1 text-primary">•</span>
-              <span>{renderInline(achievement.bullet)}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
+          <SidebarSection title={titles.achievements_and_languages}>
+            <ul className="space-y-2">
+              {sections.achievements_and_languages.map((achievement) => (
+                <li key={achievement.bullet} className="flex gap-2 text-sm leading-relaxed text-foreground/80">
+                  <span className="mt-1 text-primary">•</span>
+                  <span>{renderInline(achievement.bullet)}</span>
+                </li>
+              ))}
+            </ul>
+          </SidebarSection>
+        </aside>
+
+        <main>
+          <Section title={titles.profile}>
+            {sections.profile.map((paragraph) => (
+              <p key={paragraph} className="leading-relaxed text-foreground/80">
+                {renderInline(paragraph)}
+              </p>
+            ))}
+          </Section>
+
+          <Section title={titles.experience}>
+            <div className="space-y-10">
+              {sections.experience.map((entry) => (
+                <ExperienceItem
+                  key={`${entry.company}-${entry.start_date}`}
+                  entry={entry}
+                  lang={lang}
+                />
+              ))}
+            </div>
+          </Section>
+        </main>
+      </div>
     </div>
   )
 }

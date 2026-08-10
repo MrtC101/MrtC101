@@ -1,4 +1,4 @@
-import { ICONS, TechBadge, type badgeVariants } from '@/components/Stack'
+import { ICONS, TechBadge, type badgeVariants } from '@/components/cv/Stack'
 import { SKILL_ICON_SLUGS } from '@/lib/skills'
 import type { VariantProps } from 'class-variance-authority'
 

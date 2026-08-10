@@ -2,8 +2,8 @@
 // the "Programming Languages" / "Lenguajes" technical_skills group (key: languages).
 export const languageProficiency: Record<string, 1 | 2 | 3> = {
   Python: 3,
-  JavaScript: 2,
   TypeScript: 2,
+  Java: 2,
   'C++': 2,
   Rust: 1,
 }

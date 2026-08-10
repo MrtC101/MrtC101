@@ -21,7 +21,7 @@ cv:
         position: Computer Scientist
         start_date: 2025-07
         end_date: present
-        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, YOLO, Anomalib, OpenCV, CUDA, NVIDIA DeepStream, GStreamer, Python, SQLite, Redis, Docker, Linux"
+        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, NVIDIA DeepStream, GStreamer, Python, SQLite, Redis, Docker, Linux"
         summary: >
           Desarrollo de un motor de inferencia en tiempo real basado en pipelines de GStreamer,
           capaz de procesar hasta 6 streams RTSP en paralelo a hasta 1080p y 25 FPS,
@@ -57,7 +57,7 @@ cv:
         position: Científico de Datos (Pasantía, 200 hs)
         start_date: 2025-01
         end_date: 2025-02
-        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, OpenCV, YOLO, Anomalib, Numba, FastAPI, MongoDB"
+        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, OpenCV, Ultralytics, Anomalib, Numba, FastAPI, MongoDB"
         summary: >
           Diseño e implementación de un sistema de análisis semántico de conversaciones
           generadas por un chatbot basado en LLM, orientado a extraer patrones temáticos
@@ -86,9 +86,9 @@ cv:
     habilidades_técnicas:
       - label: Lenguajes
         key: languages
-        details: Python, JavaScript, TypeScript, C++, Rust
+        details: Python, Java, TypeScript, C++, Rust
       - label: IA & ML
-        details: PyTorch, TensorFlow, Scikit-learn, YOLO, Anomalib
+        details: PyTorch, TensorFlow, Scikit-learn, Ultralytics, Anomalib
       - label: Visión & Datos
         details: OpenCV, CUDA, Numba, Gstreamer, Pandas, NumPy
       - label: Backend & Web

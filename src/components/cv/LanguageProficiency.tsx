@@ -1,4 +1,4 @@
-import { ICONS } from '@/components/Stack'
+import { ICONS } from '@/components/cv/Stack'
 import { SKILL_ICON_SLUGS } from '@/lib/skills'
 import { languageProficiency } from '@/lib/languageProficiency'
 import { cn } from '@/lib/utils'

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 
 // Auto-registry: every SVG dropped into src/assets becomes selectable by
 // filename (lowercased, no extension) — no manual list to keep in sync.
-const iconModules = import.meta.glob('../assets/*.svg', {
+const iconModules = import.meta.glob('../../assets/*.svg', {
   eager: true,
   import: 'default',
   query: '?url',
