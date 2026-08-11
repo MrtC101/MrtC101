@@ -1,0 +1,11 @@
+<svg width="146" height="40" viewBox="0 0 146 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="View CV">
+  <rect x="0.75" y="0.75" width="144.5" height="38.5" rx="8" fill="none" stroke="#aa3bff" stroke-width="1.5"/>
+  <g transform="translate(16,12)" fill="none" stroke="#aa3bff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 0h7l4 4v12H2V0Z"/>
+    <path d="M9 0v4h4"/>
+    <path d="M4.5 8.5h6"/>
+    <path d="M4.5 11.5h6"/>
+    <path d="M4.5 14.5h3.5"/>
+  </g>
+  <text x="41" y="20" dominant-baseline="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, monospace" font-size="13" font-weight="500" letter-spacing="0.3" fill="#ffffff">View CV</text>
+</svg>
