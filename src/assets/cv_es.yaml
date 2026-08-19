@@ -17,7 +17,7 @@ cv:
       - "Licenciado en Ciencias de la Computación, enfocado en IA y resolución de problemas en Visión Computacional. Experiencia en el diseño e implementación de sistemas de inferencia en tiempo real sobre streams de video, y entrenamiento de modelos de deep learning para aplicaciones de visión computacional."
 
     experiencia_laboral:
-      - company: "[Mind Colab](https://mindcolab.com/)"
+      - company: "[MindColab](https://mindcolab.com/)"
         position: Computer Scientist
         start_date: 2025-07
         end_date: present
