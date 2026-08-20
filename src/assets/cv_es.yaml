@@ -117,14 +117,19 @@ cv:
 design:
   theme: classic
   sections:
-    show_time_spans_in:
-      - Experiencia Laboral
+    show_time_spans_in: []
 
   page:
+    show_footer: false
     top_margin: 1.2cm
     bottom_margin: 1.2cm
     left_margin: 1.3cm
     right_margin: 1.2cm
+
+  templates:
+    experience_entry:
+      main_column: "**COMPANY**, POSITION -- DATE\nSUMMARY\nHIGHLIGHTS"
+      date_and_location_column: ""
 
   header:
     alignment: left

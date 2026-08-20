@@ -27,3 +27,4 @@ src/assets/.rendercv_output/
 *.njsproj
 *.sln
 *.sw?
+tests/ats/output/

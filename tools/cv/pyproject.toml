@@ -9,3 +9,10 @@ dependencies = [
 
 [tool.uv]
 package = false
+
+[dependency-groups]
+dev = [
+    "pdfminer-six>=20260107",
+    "pdfplumber>=0.11.10",
+    "pypdf>=6.16.1",
+]
