@@ -49,11 +49,12 @@ export const cvSchema = z.object({
     headline: z.string(),
     social_networks: z.array(socialNetworkSchema),
     sections: z.object({
-      profile: z.array(z.string()),
+      summary: z.array(z.string()),
       experience: z.array(experienceEntrySchema),
       education: z.array(educationEntrySchema),
       technical_skills: z.array(technicalSkillGroupSchema),
-      achievements_and_languages: z.array(achievementSchema),
+      awards: z.array(achievementSchema),
+      languages: z.array(achievementSchema),
     }),
   }),
 })

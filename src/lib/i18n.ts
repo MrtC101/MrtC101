@@ -2,18 +2,20 @@ import type { Lang } from '@/lib/parser'
 
 export const sectionTitles: Record<Lang, Record<string, string>> = {
   en: {
-    profile: 'Summary',
+    summary: 'Summary',
     experience: 'Experience',
     education: 'Education',
     technical_skills: 'Technical Skills',
-    achievements_and_languages: 'Achievements and Languages',
+    awards: 'Awards',
+    languages: 'Languages',
   },
   es: {
-    profile: 'Perfil',
+    summary: 'Resumen',
     experience: 'Experiencia Laboral',
     education: 'Educación',
     technical_skills: 'Habilidades Técnicas',
-    achievements_and_languages: 'Logros e Idiomas',
+    awards: 'Premios',
+    languages: 'Idiomas',
   },
 }
 

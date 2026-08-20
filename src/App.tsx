@@ -123,9 +123,20 @@ function App() {
             </div>
           </SidebarSection>
 
-          <SidebarSection title={titles.achievements_and_languages}>
+          <SidebarSection title={titles.awards}>
             <ul className="space-y-2">
-              {sections.achievements_and_languages.map((achievement) => (
+              {sections.awards.map((achievement) => (
+                <li key={achievement.bullet} className="flex gap-2 text-sm leading-relaxed text-foreground/80">
+                  <span className="mt-1 text-primary">•</span>
+                  <span>{renderInline(achievement.bullet)}</span>
+                </li>
+              ))}
+            </ul>
+          </SidebarSection>
+
+          <SidebarSection title={titles.languages}>
+            <ul className="space-y-2">
+              {sections.languages.map((achievement) => (
                 <li key={achievement.bullet} className="flex gap-2 text-sm leading-relaxed text-foreground/80">
                   <span className="mt-1 text-primary">•</span>
                   <span>{renderInline(achievement.bullet)}</span>
@@ -136,8 +147,8 @@ function App() {
         </aside>
 
         <main>
-          <Section title={titles.profile}>
-            {sections.profile.map((paragraph) => (
+          <Section title={titles.summary}>
+            {sections.summary.map((paragraph) => (
               <p key={paragraph} className="leading-relaxed text-foreground/80">
                 {renderInline(paragraph)}
               </p>

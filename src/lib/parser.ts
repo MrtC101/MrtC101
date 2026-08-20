@@ -5,29 +5,32 @@ import cvEsRaw from '@/assets/cv_es.yaml'
 export type Lang = 'en' | 'es'
 
 type CanonicalSection =
-  | 'profile'
+  | 'summary'
   | 'experience'
   | 'education'
   | 'technical_skills'
-  | 'achievements_and_languages'
+  | 'awards'
+  | 'languages'
 
 // rendercv renders each `cv.sections` key as the section's PDF heading, so the YAML
 // keeps them localized. This maps each language's heading back to the fixed key
 // our schema/UI relies on.
 const sectionKeyByLang: Record<Lang, Record<string, CanonicalSection>> = {
   en: {
-    profile: 'profile',
+    summary: 'summary',
     experience: 'experience',
     education: 'education',
     technical_skills: 'technical_skills',
-    achievements_and_languages: 'achievements_and_languages',
+    awards: 'awards',
+    languages: 'languages',
   },
   es: {
-    perfil: 'profile',
+    resumen: 'summary',
     experiencia_laboral: 'experience',
     educación: 'education',
     habilidades_técnicas: 'technical_skills',
-    logros_y_idiomas: 'achievements_and_languages',
+    premios: 'awards',
+    idiomas: 'languages',
   },
 }
 
