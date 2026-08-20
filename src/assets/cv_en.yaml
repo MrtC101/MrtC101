@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
 cv:
-  name: Martín Cogo Belver
+  name: Martin Cogo Belver
   location: Godoy Cruz, Mendoza, Argentina
   email: martincogo3@gmail.com
   website: "https://mrtc101.github.io/MrtC101/"
@@ -12,7 +12,7 @@ cv:
       username: MrtC101
 
   sections:
-    profile:
+    summary:
       - "Computer Science graduate with focus on Artificial Intelligence and Computer Vision problem solving. Proven experience designing and implementing real-time inference systems over video streams, as well as training deep learning models for computer vision applications."
 
     experience:
@@ -68,13 +68,13 @@ cv:
           - "**Thematic analysis**: Unsupervised clustering to extract conversational patterns."
 
       - company: "[CICDa Research Group](https://sites.google.com/view/cicda/home)"
-        position: Thesis Research
+        position: Undergraduate Thesis Researcher
         start_date: 2024-01
         end_date: 2025-01
         logo: facultad_de_ingenieria_uncuyo_logo
         stack: "JavaScript, Python, PyTorch, Pandas, Scikit-learn, Linux, Git, OpenCV"
         summary: >
-          Conducted publication-oriented research focused on satellite image segmentation
+          Conducted undergraduate thesis research focused on satellite image segmentation
           for post-disaster building damage detection and estimation, using temporal image comparison
           and Siamese deep learning architectures.
         highlights:
@@ -83,7 +83,7 @@ cv:
           - "**Computer vision modeling**: Trained deep learning models for post-disaster building semantic segmentation."
           - "**Experimental evaluation**: Quantitative analysis using classification and segmentation metrics (Precision, Recall, F1-score)."
           - "**Compute**: Training executed on a High Performance Computing cluster with NVIDIA Tesla V100 GPUs."
-          - "[View Project](https://github.com/MrtC101/Thesis_DL_for_BDA)"
+          - "[View Project](https://github.com/MrtC101/Thesis_DL_for_BDA) · [View Thesis (in Spanish)](https://bdigital.uncu.edu.ar/fichas.php?idobjeto=20482)"
 
     technical_skills:
       - label: Programming Languages
@@ -93,11 +93,11 @@ cv:
         details: PyTorch, TensorFlow, Scikit-learn, Ultralytics, Anomalib
       - label: Vision & Data
         details: OpenCV, CUDA, Numba, GStreamer, Pandas, NumPy
-      - label: Backend & Web
+      - label: Backend, REST APIs & Web
         details: FastAPI, Java, Tomcat, GeneXus, Nginx, React, Tailwind, Bun
       - label: Databases
         details: SQLite, Redis, MongoDB
-      - label: Tools
+      - label: DevOps & Tools
         details: Docker, Linux, Git
 
     education:
@@ -108,17 +108,22 @@ cv:
         end_date: 2024
         logo: facultad_de_ingenieria_uncuyo_logo
 
-    achievements_and_languages:
+    awards:
       - bullet: "Highest GPA (8.7 on a ten-point scale) in the Computer Science program, Class of 2024."
       - bullet: "Ranked among the top 15 engineering students at UNCUYO (2024), based on academic GPA."
+
+    languages:
+      - bullet: "Spanish: Native."
       - bullet: "English: Upper-Intermediate (B2), Cambridge certified."
 
 design:
   theme: classic
   sections:
     show_time_spans_in: []
+    space_between_regular_entries: 0.55cm
   page:
     show_footer: false
+    show_top_note: false
     top_margin: 1.2cm
     bottom_margin: 1.2cm
     left_margin: 1.3cm
@@ -126,11 +131,19 @@ design:
 
   templates:
     experience_entry:
-      main_column: "**COMPANY**, POSITION -- DATE\nSUMMARY\nHIGHLIGHTS"
+      main_column: "**COMPANY**\nPOSITION\nDATE\nSUMMARY\nHIGHLIGHTS\n*Stack: STACK*"
       date_and_location_column: ""
+    education_entry:
+      main_column: "**INSTITUTION**\nAREA, STUDY_TYPE\nDATE\nSUMMARY\nHIGHLIGHTS"
+      date_and_location_column: ""
+      degree_column: null
 
   header:
     alignment: left
+    connections:
+      show_icons: false
+      separator: " | "
+      display_urls_instead_of_usernames: true
     photo_width: 2.8cm
     photo_position: right
     space_below_name: 0.35cm

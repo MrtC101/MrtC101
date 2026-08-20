@@ -13,7 +13,7 @@ cv:
       username: MrtC101
 
   sections:
-    perfil:
+    resumen:
       - "Licenciado en Ciencias de la Computación, enfocado en IA y resolución de problemas en Visión Computacional. Experiencia en el diseño e implementación de sistemas de inferencia en tiempo real sobre streams de video, y entrenamiento de modelos de deep learning para aplicaciones de visión computacional."
 
     experiencia_laboral:
@@ -69,13 +69,13 @@ cv:
           - "**Análisis temático**: Clustering no supervisado para extracción de patrones conversacionales."
           
       - company: "[Grupo CICDa](https://sites.google.com/view/cicda/home)"
-        position: Investigación de Tesis
+        position: Investigador de Tesis de Grado
         start_date: 2024-01
         end_date: 2025-01
         logo: facultad_de_ingenieria_uncuyo_logo
         stack: "JavaScript, Python, PyTorch, Pandas, Scikit-learn, Linux, Git, OpenCV"
         summary: >
-          Desarrollo de un trabajo de investigación orientado a publicación, enfocado en la segmentación de imágenes satelitales
+          Desarrollo de un trabajo de investigación de tesis de grado, enfocado en la segmentación de imágenes satelitales
           para la detección y estimación de daños en edificaciones posteriores a desastres naturales, mediante comparación temporal
           de imágenes y modelos de deep learning con arquitectura siamesa.
         highlights:
@@ -84,7 +84,7 @@ cv:
         - "**Modelado de visión**: Entrenamiento de modelos de deep learning para segmentación semántica de edificaciones post-desastre."
         - "**Evaluación experimental**: Análisis cuantitativo mediante métricas de clasificación y segmentación (Precision, Recall, F1-score)."
         - "**Cómputo**: Entrenamiento ejecutado en clúster HPC con GPU NVIDIA Tesla V100."
-        - "[Ver Proyecto](https://github.com/MrtC101/Thesis_DL_for_BDA)"
+        - "[Ver Proyecto](https://github.com/MrtC101/Thesis_DL_for_BDA) · [Ver Tesis](https://bdigital.uncu.edu.ar/fichas.php?idobjeto=20482)"
     
     habilidades_técnicas:
       - label: Lenguajes
@@ -94,11 +94,11 @@ cv:
         details: PyTorch, TensorFlow, Scikit-learn, Ultralytics, Anomalib
       - label: Visión & Datos
         details: OpenCV, CUDA, Numba, Gstreamer, Pandas, NumPy
-      - label: Backend & Web
+      - label: Backend, APIs REST y Web
         details: FastAPI, Java, Tomcat, GeneXus, Nginx, React, Tailwind, Bun
       - label: Bases de Datos
         details: SQLite, Redis, MongoDB
-      - label: Herramientas
+      - label: DevOps y Herramientas
         details: Docker, Linux, Git
 
     educación:
@@ -109,18 +109,23 @@ cv:
         end_date: 2024
         logo: facultad_de_ingenieria_uncuyo_logo
 
-    logros_y_idiomas:
+    premios:
       - bullet: "Medalla a mejor promedio promocion 2024 de la carrera Licenciatura en ciencias de la computación."
       - bullet: "Cuadro de honor (Top 15 promedios): Facultad de Ingeniería UNCUYO, 2024."
+
+    idiomas:
+      - bullet: "Español: Nativo."
       - bullet: "Inglés: Nivel B2 (Certificado por Cambridge)."
 
 design:
   theme: classic
   sections:
     show_time_spans_in: []
+    space_between_regular_entries: 0.55cm
 
   page:
     show_footer: false
+    show_top_note: false
     top_margin: 1.2cm
     bottom_margin: 1.2cm
     left_margin: 1.3cm
@@ -128,11 +133,19 @@ design:
 
   templates:
     experience_entry:
-      main_column: "**COMPANY**, POSITION -- DATE\nSUMMARY\nHIGHLIGHTS"
+      main_column: "**COMPANY**\nPOSITION\nDATE\nSUMMARY\nHIGHLIGHTS\n*Stack: STACK*"
       date_and_location_column: ""
+    education_entry:
+      main_column: "**INSTITUTION**\nAREA, STUDY_TYPE\nDATE\nSUMMARY\nHIGHLIGHTS"
+      date_and_location_column: ""
+      degree_column: null
 
   header:
     alignment: left
+    connections:
+      show_icons: false
+      separator: " | "
+      display_urls_instead_of_usernames: true
     photo_width: 2.8cm
     photo_position: right
     space_below_name: 0.35cm
