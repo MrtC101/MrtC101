@@ -28,3 +28,6 @@ src/assets/.rendercv_output/
 *.sln
 *.sw?
 tests/ats/output/
+
+# Local proof images (source material; thumbnails live in src/assets/gallery/)
+assets/Proofs/preview/

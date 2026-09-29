@@ -15,6 +15,8 @@ const experienceEntrySchema = z.object({
   stack: z.string().optional(),
   // Filename (no extension) of a logo registered in src/lib/logos.ts.
   logo: z.string().optional(),
+  // Folder name under src/assets/gallery/ (see src/lib/gallery.ts).
+  gallery: z.string().optional(),
   summary: z.string(),
   highlights: z.array(z.string()),
 })

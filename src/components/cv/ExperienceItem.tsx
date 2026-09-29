@@ -5,12 +5,14 @@ import { renderInline } from '@/lib/markdown'
 import { TimelineEntry } from '@/components/cv/TimelineEntry'
 import { SkillBadge } from '@/components/cv/SkillBadge'
 import { LOGOS } from '@/lib/logos'
+import { GALLERIES } from '@/lib/gallery'
 
 type ExperienceEntry = CvContent['cv']['sections']['experience'][number]
 
 export function ExperienceItem({ entry, lang }: { entry: ExperienceEntry; lang: Lang }) {
   const duration = formatDuration(entry.start_date, entry.end_date, lang)
   const logo = entry.logo ? LOGOS[entry.logo] : undefined
+  const gallery = entry.gallery ? GALLERIES[entry.gallery] : undefined
 
   return (
     <TimelineEntry>
@@ -51,6 +53,20 @@ export function ExperienceItem({ entry, lang }: { entry: ExperienceEntry; lang: 
           </li>
         ))}
       </ul>
+
+      {gallery && gallery.length > 0 && (
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          {gallery.map((src) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              loading="lazy"
+              className="aspect-[4/3] w-full border border-border object-cover"
+            />
+          ))}
+        </div>
+      )}
     </TimelineEntry>
   )
 }

@@ -4,7 +4,7 @@ cv:
   location: Godoy Cruz, Mendoza, Argentina
   email: martincogo3@gmail.com
   website: "https://mrtc101.github.io/MrtC101/"
-  headline: Computer Science Degree
+  headline: Computer Vision Engineer | Real-Time Video Perception & Edge AI
   social_networks:
     - network: LinkedIn
       username: martin-cogo
@@ -13,24 +13,24 @@ cv:
 
   sections:
     summary:
-      - "Computer Science graduate with focus on Artificial Intelligence and Computer Vision problem solving. Proven experience designing and implementing real-time inference systems over video streams, as well as training deep learning models for computer vision applications."
+      - "Engineer specialized in real-time video perception: I design and implement inference pipelines over GStreamer, GPU-accelerated with CUDA, processing RTSP video streams in production. I work with PyTorch, YOLO, and CUDA-accelerated OpenCV for live object detection, optimizing pipeline stages (GPU decoding, inference, zero-copy transfer) for 24/7 systems. Computer Science background (UNCUYO), with a thesis on satellite image segmentation using Deep Learning. Looking for Computer Vision / Perception Engineer roles focused on real-time video systems and edge deployment (Jetson, embedded)."
 
     experience:
       - company: "[MindColab](https://mindcolab.com/)"
-        position: Computer Scientist
+        position: Computer Vision Software Engineer
         start_date: 2025-07
         end_date: present
         logo: mindcolab_logo
-        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, NVIDIA DeepStream, GStreamer, Python, SQLite, Redis, Docker, Linux"
+        gallery: mindcolab
+        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, GStreamer, Python, SQLite, Redis, Docker, Linux"
         summary: >
           Designed and implemented a real-time inference engine built on GStreamer pipelines,
-          capable of processing up to 6 parallel RTSP streams at 720p and 25 FPS,
-          maintaining frame drop below 1% under load.
+          capable of processing multiple parallel RTSP streams with low latency under load.
           The system follows a multi-process architecture with shared-memory IPC
           to minimize unnecessary copies and reduce end-to-end latency.
         highlights:
           - "**Flow control**: Implemented backpressure handling using GStreamer queues to sustain stable throughput under concurrent load."
-          - "**Acceleration stack**: GPU-based implementation leveraging NVIDIA DeepStream, NVMM buffers, CUDA kernels (Numba), and CUDA-enabled OpenCV for preprocessing."
+          - "**Acceleration stack**: GPU-based implementation leveraging GStreamer NVIDIA plugins, NVMM buffers, CUDA kernels (Numba), and CUDA-enabled OpenCV for preprocessing."
           - "**Inference optimization**: Executed YOLO/PyTorch models with frames kept predominantly on GPU, reducing CPU↔GPU transfer overhead."
           - "**Lifecycle & operations**: Supported controlled restarts, hot configuration reloads via a custom DSL, and graceful shutdowns in 24/7 environments."
           - "**Observability**: Measured per-stage pipeline latency and monitored GPU, VRAM, RAM, and CPU utilization under sustained load."
@@ -39,7 +39,7 @@ cv:
       - company: "[Municipality of Godoy Cruz](https://www.godoycruz.gob.ar/)"
         position: Web Developer
         start_date: 2025-06
-        end_date: present
+        end_date: 2026-09
         logo: municipalidad_de_godoy_cruz_logo
         stack: "GeneXus, Java, Tomcat, Nginx, React, Tailwind, Bun"
         summary: >
@@ -54,7 +54,7 @@ cv:
           - "[View Project](https://github.com/MrtC101/digesto-semantic-chat)"
 
       - company: "[Klari Inc.](https://klari.ai/)"
-        position: Data Scientist
+        position: Data Scientist (Internship, 200 hrs)
         start_date: 2025-01
         end_date: 2025-02
         logo: klariai_logo
@@ -88,13 +88,13 @@ cv:
     technical_skills:
       - label: Programming Languages
         key: languages
-        details: Python, Java, TypeScript, C++, Rust
+        details: Python, TypeScript, C++, Rust
       - label: AI & ML
-        details: PyTorch, TensorFlow, Scikit-learn, Ultralytics, Anomalib
+        details: PyTorch, Scikit-learn, Ultralytics, Anomalib
       - label: Vision & Data
-        details: OpenCV, CUDA, Numba, GStreamer, Pandas, NumPy
+        details: OpenCV, CUDA, GStreamer, Pandas, NumPy
       - label: Backend, REST APIs & Web
-        details: FastAPI, Java, Tomcat, GeneXus, Nginx, React, Tailwind, Bun
+        details: FastAPI, Nginx, React, Tailwind, Bun
       - label: Databases
         details: SQLite, Redis, MongoDB
       - label: DevOps & Tools

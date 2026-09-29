@@ -4,7 +4,7 @@ cv:
   location: Godoy Cruz, Mendoza, Argentina
   email: martincogo3@gmail.com
   website: "https://mrtc101.github.io/MrtC101/"
-  headline: Licenciado en Ciencias de la Computación
+  headline: Ingeniero especializado en percepción visual en tiempo real y Edge AI
   #photo: picture.jfif
   social_networks:
     - network: LinkedIn
@@ -14,24 +14,24 @@ cv:
 
   sections:
     resumen:
-      - "Licenciado en Ciencias de la Computación, enfocado en IA y resolución de problemas en Visión Computacional. Experiencia en el diseño e implementación de sistemas de inferencia en tiempo real sobre streams de video, y entrenamiento de modelos de deep learning para aplicaciones de visión computacional."
+      - "Ingeniero especializado en percepción visual en tiempo real: diseño e implemento pipelines de inferencia sobre GStreamer, acelerados con CUDA, para procesar streams de video RTSP en producción. Trabajo con PyTorch, YOLO y OpenCV (CUDA) para detección de objetos en vivo, optimizando etapas del pipeline (decodificación GPU, inferencia, transferencia zero-copy) para sistemas 24/7. Formación en Ciencias de la Computación (UNCUYO), con trabajo final de carrera en segmentación de imágenes satelitales mediante Deep Learning. Busco roles de Computer Vision / Perception Engineer enfocados en sistemas de video en tiempo real y despliegue en edge (Jetson, embebidos)."
 
     experiencia_laboral:
       - company: "[MindColab](https://mindcolab.com/)"
-        position: Computer Scientist
+        position: Computer Vision Software Engineer
         start_date: 2025-07
         end_date: present
         logo: mindcolab_logo
-        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, NVIDIA DeepStream, GStreamer, Python, SQLite, Redis, Docker, Linux"
+        gallery: mindcolab
+        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, GStreamer, Python, SQLite, Redis, Docker, Linux"
         summary: >
           Desarrollo de un motor de inferencia en tiempo real basado en pipelines de GStreamer,
-          capaz de procesar hasta 6 streams RTSP en paralelo a hasta 1080p y 25 FPS,
-          manteniendo frame drop < 1% bajo carga.
+          capaz de procesar múltiples streams RTSP en paralelo con baja latencia bajo carga.
           El sistema adopta una arquitectura multiproceso con IPC mediante memoria compartida,
           orientada a minimizar copias innecesarias y reducir latencia.
         highlights:
           - "**Gestión de flujo**: Manejo de backpressure mediante colas en GStreamer para sostener throughput estable en escenarios de carga concurrente."
-          - "**Stack de aceleración**: Implementación en GPU utilizando NVIDIA DeepStream, buffers NVMM, kernels CUDA (Numba) y OpenCV con soporte CUDA para preprocesamiento."
+          - "**Stack de aceleración**: Implementación en GPU utilizando plugins NVIDIA de GStreamer, buffers NVMM, kernels CUDA (Numba) y OpenCV con soporte CUDA para preprocesamiento."
           - "**Optimización de inferencia**: Ejecución de modelos YOLO/PyTorch con transferencia de frames mayoritariamente en GPU, reduciendo overhead CPU↔GPU."
           - "**Lifecycle y operación**: Soporte de restart controlado, hot-reload de configuración mediante DSL propio y graceful shutdown en entornos 24/7."
           - "**Observabilidad**: Medición de latencia parcial por pipeline y monitoreo de uso de GPU, VRAM, RAM y CPU bajo carga sostenida."
@@ -40,7 +40,7 @@ cv:
       - company: "[Municipalidad de Godoy Cruz](https://www.godoycruz.gob.ar/)"
         position: Desarrollador Web
         start_date: 2025-06
-        end_date: present
+        end_date: 2026-09
         logo: municipalidad_de_godoy_cruz_logo
         stack: "GeneXus, Java, Tomcat, Nginx, React, Tailwind, Bun"
         summary: >
@@ -89,13 +89,13 @@ cv:
     habilidades_técnicas:
       - label: Lenguajes
         key: languages
-        details: Python, Java, TypeScript, C++, Rust
+        details: Python, TypeScript, C++, Rust
       - label: IA & ML
-        details: PyTorch, TensorFlow, Scikit-learn, Ultralytics, Anomalib
+        details: PyTorch, Scikit-learn, Ultralytics, Anomalib
       - label: Visión & Datos
-        details: OpenCV, CUDA, Numba, Gstreamer, Pandas, NumPy
+        details: OpenCV, CUDA, GStreamer, Pandas, NumPy
       - label: Backend, APIs REST y Web
-        details: FastAPI, Java, Tomcat, GeneXus, Nginx, React, Tailwind, Bun
+        details: FastAPI, Nginx, React, Tailwind, Bun
       - label: Bases de Datos
         details: SQLite, Redis, MongoDB
       - label: DevOps y Herramientas
