@@ -62,7 +62,7 @@ export function ExperienceItem({ entry, lang }: { entry: ExperienceEntry; lang: 
               src={src}
               alt=""
               loading="lazy"
-              className="aspect-[4/3] w-full border border-border object-cover"
+              className="aspect-square w-full border border-border object-cover"
             />
           ))}
         </div>

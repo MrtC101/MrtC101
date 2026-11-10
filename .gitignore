@@ -29,5 +29,7 @@ src/assets/.rendercv_output/
 *.sw?
 tests/ats/output/
 
-# Local proof images (source material; thumbnails live in src/assets/gallery/)
-assets/Proofs/preview/
+# Private, unversioned material: CV working notes with raw measurements and
+# source footage/proofs (may show client sites). Only curated, client-free
+# thumbnails are published, from src/assets/gallery/.
+private/

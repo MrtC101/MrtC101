@@ -1,4 +1,4 @@
-<h1 align="center">Hi, I'm Martín Cogo Belver 👋</h1>
+<h1 align="center">Hi, I'm Martín Cogo 👋</h1>
 
 <p align="center">
   Computer Scientist focused on AI and Computer Vision — real-time inference pipelines over video streams and deep learning for vision applications.

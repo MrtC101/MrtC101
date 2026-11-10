@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
 cv:
-  name: Martin Cogo Belver
+  name: Martín Cogo
   location: Godoy Cruz, Mendoza, Argentina
   email: martincogo3@gmail.com
   website: "https://mrtc101.github.io/MrtC101/"
@@ -13,92 +13,82 @@ cv:
 
   sections:
     summary:
-      - "Engineer specialized in real-time video perception: I design and implement inference pipelines over GStreamer, GPU-accelerated with CUDA, processing RTSP video streams in production. I work with PyTorch, YOLO, and CUDA-accelerated OpenCV for live object detection, optimizing pipeline stages (GPU decoding, inference, zero-copy transfer) for 24/7 systems. Computer Science background (UNCUYO), with a thesis on satellite image segmentation using Deep Learning. Looking for Computer Vision / Perception Engineer roles focused on real-time video systems and edge deployment (Jetson, embedded)."
+      - "I build real-time computer vision systems on NVIDIA GPUs: GStreamer/DeepStream pipelines running TensorRT models on live RTSP cameras, with per-stage telemetry to measure and optimize latency. At MindColab I cut a live pipeline's latency from ~1.1 s to ~39 ms and authored 98% of the commits of a 12-component edge platform. Computer Science graduate (UNCUYO) with the highest GPA of the 2024 class. Looking for Computer Vision / Perception Engineer roles."
 
     experience:
       - company: "[MindColab](https://mindcolab.com/)"
-        position: Computer Vision Software Engineer
+        position: Computer Vision Software Engineer (Part-time)
         start_date: 2025-07
         end_date: present
         logo: mindcolab_logo
         gallery: mindcolab
-        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, GStreamer, Python, SQLite, Redis, Docker, Linux"
+        stack: "Python, GStreamer, DeepStream, TensorRT, CUDA, PyTorch, ONNX, Anomalib, Ultralytics, OpenCV, FastAPI, ZMQ, Redis, React, Docker, k3s, Helm"
         summary: >
-          Designed and implemented a real-time inference engine built on GStreamer pipelines,
-          capable of processing multiple parallel RTSP streams with low latency under load.
-          The system follows a multi-process architecture with shared-memory IPC
-          to minimize unnecessary copies and reduce end-to-end latency.
+          Real-time inference engine and edge platform for visual inspection of mining conveyor belts.
+          It processes multiple live RTSP cameras with GStreamer/DeepStream and TensorRT, keeping
+          frames in GPU memory (NVMM).
         highlights:
-          - "**Flow control**: Implemented backpressure handling using GStreamer queues to sustain stable throughput under concurrent load."
-          - "**Acceleration stack**: GPU-based implementation leveraging GStreamer NVIDIA plugins, NVMM buffers, CUDA kernels (Numba), and CUDA-enabled OpenCV for preprocessing."
-          - "**Inference optimization**: Executed YOLO/PyTorch models with frames kept predominantly on GPU, reducing CPU↔GPU transfer overhead."
-          - "**Lifecycle & operations**: Supported controlled restarts, hot configuration reloads via a custom DSL, and graceful shutdowns in 24/7 environments."
-          - "**Observability**: Measured per-stage pipeline latency and monitored GPU, VRAM, RAM, and CPU utilization under sustained load."
-          - "**Technical impact**: Migrated from a CPU-bound solution to GPU acceleration, enabling real-time stream retransmission where it was previously not feasible."
+          - "**Latency**: Cut live pipeline latency from ~1.1 s to ~39 ms mean (~28×; 76 ms p99 against a 200 ms frame budget) and frame loss from 17.9% to 0.11% in steady state. I removed two hidden waits that my telemetry exposed: an encoder blocking upstream threads and publisher clock sync."
+          - "**Per-stage telemetry**: Designed and built the engine's telemetry: 48 timing buckets per job, probes on every GStreamer element, GPU timings via CUDA events, mergeable log histograms (p50/p95/p99) in 5 s windows, and a REST API with GPU, CPU and RAM metrics."
+          - "**Models**: Runs 2 TensorRT FP16 models per frame: DINOv2-small detects foreign objects (anomaly detection) and FastSAM-s segments rocks and measures their size. Compared Dinomaly and EfficientAD, and validated ONNX and TensorRT exports against the original PyTorch checkpoint."
+          - "**24/7 operation**: Self-healing workers: 8 automatic restarts in ~1 h after upstream RTSP source drops, each back in 34–36 s with no manual action. Controlled restarts, config hot-reload through a custom DSL, and graceful shutdown."
+          - "**Platform**: Main author (98% of 2,717 commits) of a 12-component edge platform: FastAPI microservices, ZMQ, Redis, a React SPA with live WebRTC video, and centralized logging (Fluent Bit + VictoriaLogs), deployed with k3s + Helm for NVIDIA Jetson."
 
       - company: "[Municipality of Godoy Cruz](https://www.godoycruz.gob.ar/)"
-        position: Web Developer
+        position: Web Developer (Part-time)
         start_date: 2025-06
         end_date: 2026-09
         logo: municipalidad_de_godoy_cruz_logo
-        stack: "GeneXus, Java, Tomcat, Nginx, React, Tailwind, Bun"
+        stack: "Java, GeneXus, Tomcat, Nginx, React, Tailwind, Bun"
         summary: >
-          Maintain and extend a legacy GeneXus-generated Java web application for municipal
-          debt and tax payments, including refactoring integrations with multiple banking
-          payment gateways, and building an internal LLM-based chat interface for semantic
-          querying of municipal regulations.
+          Maintained and extended the municipal debt and tax payment web application
+          (GeneXus-generated Java).
         highlights:
-          - "**Legacy maintenance**: Maintain and resolve tickets on a GeneXus-generated Java codebase, within the municipal debt and tax payment module."
-          - "**Payment integrations**: Refactored integrations with multiple banking payment gateway APIs (Banco Macro, Mercado Pago, ePagos, XNet, Pago Fácil, Supervielle) in the transaction and amount-submission flow."
-          - "**LLM chat interface**: Built an internal web chat interface for semantic querying of municipal regulations via an LLM."
-          - "[View Project](https://github.com/MrtC101/digesto-semantic-chat)"
+          - "**Payment integrations**: Refactored integrations with 6 banking payment gateways (Banco Macro, Mercado Pago, ePagos, XNet, Pago Fácil, Supervielle) in the amount and transaction submission flow."
+          - "**LLM chat**: Built an internal chat interface to query municipal regulations through semantic search and an LLM ([view project](https://github.com/MrtC101/digesto-semantic-chat))."
 
       - company: "[Klari Inc.](https://klari.ai/)"
         position: Data Scientist (Internship, 200 hrs)
         start_date: 2025-01
         end_date: 2025-02
         logo: klariai_logo
-        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, OpenCV, Ultralytics, Anomalib, Numba, FastAPI, MongoDB"
+        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, FastAPI, MongoDB"
         summary: >
-          Designed and implemented a semantic analysis system for conversations generated by an LLM-based chatbot,
-          aimed at extracting thematic patterns and producing actionable reports on user behavior
-          and interaction quality.
+          Semantic analysis of conversations from an LLM-based chatbot, with reports on
+          interaction quality.
         highlights:
-          - "**NLP pipeline**: Semantic representation of conversations using embeddings."
-          - "**Thematic analysis**: Unsupervised clustering to extract conversational patterns."
+          - "**NLP pipeline**: Conversation embeddings and unsupervised clustering to detect recurring topics."
 
       - company: "[CICDa Research Group](https://sites.google.com/view/cicda/home)"
         position: Undergraduate Thesis Researcher
         start_date: 2024-01
         end_date: 2025-01
         logo: facultad_de_ingenieria_uncuyo_logo
-        stack: "JavaScript, Python, PyTorch, Pandas, Scikit-learn, Linux, Git, OpenCV"
+        stack: "Python, PyTorch, Pandas, Scikit-learn, OpenCV, Linux, Git"
         summary: >
-          Conducted undergraduate thesis research focused on satellite image segmentation
-          for post-disaster building damage detection and estimation, using temporal image comparison
-          and Siamese deep learning architectures.
+          Thesis on post-disaster building damage assessment from satellite imagery: a multitask
+          Siamese U-Net that segments buildings and classifies damage into 4 levels from pre- and
+          post-disaster images ([code](https://github.com/MrtC101/Thesis_DL_for_BDA)
+          · [thesis, in Spanish](https://bdigital.uncu.edu.ar/fichas.php?idobjeto=20482)).
         highlights:
-          - "**xBD dataset**: Trained on ~2,400 VHR satellite images for Building Damage Assessment tasks."
-          - "**End-to-end pipeline**: Preprocessing, training, inference, and post-processing for semantic segmentation and multitemporal structural change detection."
-          - "**Computer vision modeling**: Trained deep learning models for post-disaster building semantic segmentation."
-          - "**Experimental evaluation**: Quantitative analysis using classification and segmentation metrics (Precision, Recall, F1-score)."
-          - "**Compute**: Training executed on a High Performance Computing cluster with NVIDIA Tesla V100 GPUs."
-          - "[View Project](https://github.com/MrtC101/Thesis_DL_for_BDA) · [View Thesis (in Spanish)](https://bdigital.uncu.edu.ar/fichas.php?idobjeto=20482)"
+          - "**End-to-end pipeline**: Preprocessing, training, inference and post-processing on ~3,000 VHR satellite images from the xBD dataset, with a custom greedy sampling strategy to balance damage classes."
+          - "**Results**: 0.80 F1 for building segmentation on the test split, with pixel- and object-level evaluation."
+          - "**Compute**: Trained on an HPC cluster with NVIDIA Tesla V100 GPUs."
 
     technical_skills:
       - label: Programming Languages
         key: languages
-        details: Python, TypeScript, C++, Rust
+        details: Python, TypeScript/JavaScript, C/C++
+      - label: Computer Vision & Inference
+        details: GStreamer, DeepStream, TensorRT, CUDA, ONNX, OpenCV
       - label: AI & ML
-        details: PyTorch, Scikit-learn, Ultralytics, Anomalib
-      - label: Vision & Data
-        details: OpenCV, CUDA, GStreamer, Pandas, NumPy
+        details: PyTorch, Ultralytics, Anomalib, Scikit-learn, Pandas, NumPy
       - label: Backend, REST APIs & Web
-        details: FastAPI, Nginx, React, Tailwind, Bun
+        details: FastAPI, ZMQ, Nginx, React, Tailwind
       - label: Databases
-        details: SQLite, Redis, MongoDB
+        details: Redis, SQLite, MongoDB
       - label: DevOps & Tools
-        details: Docker, Linux, Git
+        details: Docker, k3s, Helm, Linux, Git
 
     education:
       - institution: National University of Cuyo
@@ -110,7 +100,7 @@ cv:
 
     awards:
       - bullet: "Highest GPA (8.7 on a ten-point scale) in the Computer Science program, Class of 2024."
-      - bullet: "Ranked among the top 15 engineering students at UNCUYO (2024), based on academic GPA."
+      - bullet: "Faculty of Engineering honor roll (top 15 GPAs), UNCUYO, 2024."
 
     languages:
       - bullet: "Spanish: Native."
@@ -121,6 +111,13 @@ design:
   sections:
     show_time_spans_in: []
     space_between_regular_entries: 0.55cm
+
+  # Dates live in the main column (see templates), so the right-hand
+  # date/location column is always empty: give its width back to the text.
+  entries:
+    date_and_location_width: 0cm
+    space_between_columns: 0cm
+
   page:
     show_footer: false
     show_top_note: false
@@ -153,7 +150,7 @@ design:
       alignment: left
       date_and_location_column_alignment: right
       font_family:
-        body: Source Sans 0
+        body: Source Sans 3
         name: Source Sans 3
         headline: Source Sans 3
         connections: Source Sans 3

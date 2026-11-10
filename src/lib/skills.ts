@@ -3,6 +3,7 @@
 // Skills without a matching asset simply render without an icon.
 export const SKILL_ICON_SLUGS: Record<string, string> = {
   Python: 'python',
+  'TypeScript/JavaScript': 'typescript',
   'C/C++': 'c-plusplus',
   'C++': 'c-plusplus',
   PyTorch: 'pytorch',
@@ -10,6 +11,9 @@ export const SKILL_ICON_SLUGS: Record<string, string> = {
   OpenCV: 'opencv',
   GStreamer: 'gstreamer',
   'NVIDIA DeepStream': 'nvidia',
+  DeepStream: 'nvidia',
+  TensorRT: 'nvidia',
+  CUDA: 'nvidia',
   Pandas: 'pandas',
   NumPy: 'numpy',
   Docker: 'docker',
@@ -21,7 +25,6 @@ export const SKILL_ICON_SLUGS: Record<string, string> = {
   Tailwind: 'tailwind-css',
   JavaScript: 'javascript',
   TypeScript: 'typescript',
-  Rust: 'rust',
   SQLite: 'sqlite',
   Redis: 'redis',
   MongoDB: 'mongodb',

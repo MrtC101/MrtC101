@@ -1,9 +1,22 @@
+import { Fragment } from 'react'
 import { ICONS } from '@/components/cv/Stack'
 import { SKILL_ICON_SLUGS } from '@/lib/skills'
 import { languageProficiency } from '@/lib/languageProficiency'
 import { cn } from '@/lib/utils'
 
 const SEGMENTS = [1, 2, 3] as const
+
+// Combined labels ("TypeScript/JavaScript") are wider than the sidebar allows
+// next to the bar; give them a line-break opportunity right after each slash.
+function breakAfterSlashes(name: string) {
+  return name.split('/').map((part, i) => (
+    <Fragment key={i}>
+      {i > 0 && '/'}
+      {i > 0 && <wbr />}
+      {part}
+    </Fragment>
+  ))
+}
 
 export function LanguageProficiency({
   languages,
@@ -25,11 +38,15 @@ export function LanguageProficiency({
 
           return (
             <div key={name} className="flex items-center justify-between gap-4">
-              <span className="flex items-center gap-2 text-sm text-foreground">
-                {icon && <img src={icon} alt="" className="size-4" />}
-                {name}
+              <span className="flex min-w-0 items-center gap-2 text-sm text-foreground">
+                {icon && <img src={icon} alt="" className="size-4 shrink-0" />}
+                <span>{breakAfterSlashes(name)}</span>
               </span>
-              <div className="flex gap-1" role="img" aria-label={`${name}: ${levelLabels[level - 1]}`}>
+              <div
+                className="flex shrink-0 gap-1"
+                role="img"
+                aria-label={`${name}: ${levelLabels[level - 1]}`}
+              >
                 {SEGMENTS.map((segment) => (
                   <span
                     key={segment}

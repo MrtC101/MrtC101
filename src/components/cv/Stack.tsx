@@ -20,23 +20,18 @@ const ICONS: Record<string, string> = Object.fromEntries(
 const LABEL_OVERRIDES: Record<string, string> = {
   'c-plusplus': 'C++',
   'tailwind-css': 'Tailwind CSS',
-  'azure-sql-server': 'Azure SQL Server',
   'scikit-learn': 'scikit-learn',
-  'github-dark': 'GitHub',
   'claude-ai-wordmark': 'Claude',
-  postgresql: 'PostgreSQL',
   fastapi: 'FastAPI',
   nvidia: 'NVIDIA',
   sqlite: 'SQLite',
   gstreamer: 'GStreamer',
-  mariadb: 'MariaDB',
   mongodb: 'MongoDB',
   opencv: 'OpenCV',
   numpy: 'NumPy',
   pytorch: 'PyTorch',
   typescript: 'TypeScript',
   nginx: 'NGINX',
-  linkedin: 'LinkedIn',
   genexus: 'GeneXus',
 }
 

@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
 cv:
-  name: Martín Cogo Belver
+  name: Martín Cogo
   location: Godoy Cruz, Mendoza, Argentina
   email: martincogo3@gmail.com
   website: "https://mrtc101.github.io/MrtC101/"
-  headline: Ingeniero especializado en percepción visual en tiempo real y Edge AI
+  headline: Computer Vision Engineer | Percepción visual en tiempo real y Edge AI
   #photo: picture.jfif
   social_networks:
     - network: LinkedIn
@@ -14,104 +14,94 @@ cv:
 
   sections:
     resumen:
-      - "Ingeniero especializado en percepción visual en tiempo real: diseño e implemento pipelines de inferencia sobre GStreamer, acelerados con CUDA, para procesar streams de video RTSP en producción. Trabajo con PyTorch, YOLO y OpenCV (CUDA) para detección de objetos en vivo, optimizando etapas del pipeline (decodificación GPU, inferencia, transferencia zero-copy) para sistemas 24/7. Formación en Ciencias de la Computación (UNCUYO), con trabajo final de carrera en segmentación de imágenes satelitales mediante Deep Learning. Busco roles de Computer Vision / Perception Engineer enfocados en sistemas de video en tiempo real y despliegue en edge (Jetson, embebidos)."
+      - "Desarrollo sistemas de visión por computadora en tiempo real sobre GPU NVIDIA: pipelines GStreamer/DeepStream que corren modelos TensorRT sobre cámaras RTSP en vivo, con telemetría por etapas para medir y optimizar la latencia. En MindColab bajé la latencia de un pipeline en vivo de ~1,1 s a ~39 ms y soy autor del 98% de los commits de una plataforma edge de 12 componentes. Licenciado en Ciencias de la Computación (UNCUYO), mejor promedio de la promoción 2024. Busco roles de Computer Vision / Perception Engineer."
 
     experiencia_laboral:
       - company: "[MindColab](https://mindcolab.com/)"
-        position: Computer Vision Software Engineer
+        position: Computer Vision Software Engineer (Part-time)
         start_date: 2025-07
         end_date: present
         logo: mindcolab_logo
         gallery: mindcolab
-        stack: "Tailwind, React, TypeScript, Bun, FastAPI, PyTorch, Ultralytics, Anomalib, OpenCV, CUDA, GStreamer, Python, SQLite, Redis, Docker, Linux"
+        stack: "Python, GStreamer, DeepStream, TensorRT, CUDA, PyTorch, ONNX, Anomalib, Ultralytics, OpenCV, FastAPI, ZMQ, Redis, React, Docker, k3s, Helm"
         summary: >
-          Desarrollo de un motor de inferencia en tiempo real basado en pipelines de GStreamer,
-          capaz de procesar múltiples streams RTSP en paralelo con baja latencia bajo carga.
-          El sistema adopta una arquitectura multiproceso con IPC mediante memoria compartida,
-          orientada a minimizar copias innecesarias y reducir latencia.
+          Motor de inferencia en tiempo real y plataforma edge para la inspección visual de cintas
+          transportadoras en minería. Procesa varias cámaras RTSP en vivo con GStreamer/DeepStream
+          y TensorRT, con los frames en memoria de GPU (NVMM).
         highlights:
-          - "**Gestión de flujo**: Manejo de backpressure mediante colas en GStreamer para sostener throughput estable en escenarios de carga concurrente."
-          - "**Stack de aceleración**: Implementación en GPU utilizando plugins NVIDIA de GStreamer, buffers NVMM, kernels CUDA (Numba) y OpenCV con soporte CUDA para preprocesamiento."
-          - "**Optimización de inferencia**: Ejecución de modelos YOLO/PyTorch con transferencia de frames mayoritariamente en GPU, reduciendo overhead CPU↔GPU."
-          - "**Lifecycle y operación**: Soporte de restart controlado, hot-reload de configuración mediante DSL propio y graceful shutdown en entornos 24/7."
-          - "**Observabilidad**: Medición de latencia parcial por pipeline y monitoreo de uso de GPU, VRAM, RAM y CPU bajo carga sostenida."
-          - "**Impacto técnico**: Migración desde una solución CPU-bound a GPU, habilitando retransmisión de streams en tiempo real donde previamente no era viable."
+          - "**Latencia**: Bajé la latencia del pipeline en vivo de ~1,1 s a ~39 ms de media (~28×; p99 de 76 ms frente a un presupuesto de 200 ms por frame) y la pérdida de frames de 17,9% a 0,11% en régimen estable. Quité dos esperas ocultas que expuso mi telemetría: un encoder que bloqueaba los hilos de arriba y la sincronización de reloj del publisher."
+          - "**Telemetría por etapas**: Diseñé e implementé la telemetría del motor: 48 métricas de tiempo por job, probes en cada elemento GStreamer, tiempos de GPU con eventos CUDA, histogramas logarítmicos fusionables (p50/p95/p99) en ventanas de 5 s y una API REST con métricas de GPU, CPU y RAM."
+          - "**Modelos**: 2 modelos TensorRT FP16 por frame: DINOv2-small detecta objetos extraños (anomalías) y FastSAM-s segmenta rocas y mide su tamaño. Comparé Dinomaly y EfficientAD, y validé las exportaciones a ONNX y TensorRT contra el checkpoint original de PyTorch."
+          - "**Operación 24/7**: Workers que se recuperan solos: 8 reinicios automáticos en ~1 h ante caídas de la fuente RTSP, cada uno en 34–36 s y sin intervención manual. Restart controlado, hot-reload de configuración con un DSL propio y graceful shutdown."
+          - "**Plataforma**: Autor principal (98% de 2717 commits) de una plataforma edge de 12 componentes: microservicios FastAPI, ZMQ, Redis, una SPA en React con video WebRTC en vivo y logs centralizados (Fluent Bit + VictoriaLogs), desplegada con k3s y Helm para NVIDIA Jetson."
 
       - company: "[Municipalidad de Godoy Cruz](https://www.godoycruz.gob.ar/)"
-        position: Desarrollador Web
+        position: Desarrollador Web (Part-time)
         start_date: 2025-06
         end_date: 2026-09
         logo: municipalidad_de_godoy_cruz_logo
-        stack: "GeneXus, Java, Tomcat, Nginx, React, Tailwind, Bun"
+        stack: "Java, GeneXus, Tomcat, Nginx, React, Tailwind, Bun"
         summary: >
-          Mantenimiento y extensión de una aplicación web legacy generada con GeneXus para el
-          pago de deudas y tasas municipales, incluyendo la refactorización de integraciones
-          con múltiples pasarelas de pago bancarias, y el desarrollo de una interfaz de chat
-          interna basada en LLM para consulta semántica de normativas municipales.
+          Mantenimiento y extensión de la aplicación web de pago de deudas y tasas municipales
+          (Java generado con GeneXus).
         highlights:
-          - "**Mantenimiento legacy**: Mantenimiento y resolución de tickets sobre código Java generado con GeneXus, dentro del módulo de pago de deudas y tasas municipales."
-          - "**Integraciones de pago**: Refactorización de integraciones con múltiples APIs de pasarelas de pago bancarias (Banco Macro, Mercado Pago, ePagos, XNet, Pago Fácil, Supervielle) en el flujo de envío de montos y transacciones."
-          - "**Interfaz de chat con LLM**: Desarrollo de una interfaz web de chat interna para consulta semántica de normativas municipales mediante un LLM."
-          - "[Ver Proyecto](https://github.com/MrtC101/digesto-semantic-chat)"
+          - "**Integraciones de pago**: Refactoricé las integraciones con 6 pasarelas de pago bancarias (Banco Macro, Mercado Pago, ePagos, XNet, Pago Fácil, Supervielle) en el flujo de envío de montos y transacciones."
+          - "**Chat con LLM**: Desarrollé una interfaz de chat interna para consultar normativas municipales mediante búsqueda semántica y un LLM ([ver proyecto](https://github.com/MrtC101/digesto-semantic-chat))."
 
       - company: "[Klari Inc.](https://klari.ai/)"
         position: Científico de Datos (Pasantía, 200 hs)
         start_date: 2025-01
         end_date: 2025-02
         logo: klariai_logo
-        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow, OpenCV, Ultralytics, Anomalib, Numba, FastAPI, MongoDB"
+        stack: "Python, NumPy, Pandas, Scikit-learn, PyTorch, FastAPI, MongoDB"
         summary: >
-          Diseño e implementación de un sistema de análisis semántico de conversaciones
-          generadas por un chatbot basado en LLM, orientado a extraer patrones temáticos
-          y generar reportes accionables sobre comportamiento y calidad de interacción.
+          Análisis semántico de las conversaciones de un chatbot basado en LLM, con reportes sobre
+          la calidad de la interacción.
         highlights:
-          - "**Pipeline NLP**: Representación semántica de conversaciones mediante embeddings."
-          - "**Análisis temático**: Clustering no supervisado para extracción de patrones conversacionales."
-          
+          - "**Pipeline NLP**: Embeddings de las conversaciones y clustering no supervisado para detectar temas recurrentes."
+
       - company: "[Grupo CICDa](https://sites.google.com/view/cicda/home)"
         position: Investigador de Tesis de Grado
         start_date: 2024-01
         end_date: 2025-01
         logo: facultad_de_ingenieria_uncuyo_logo
-        stack: "JavaScript, Python, PyTorch, Pandas, Scikit-learn, Linux, Git, OpenCV"
+        stack: "Python, PyTorch, Pandas, Scikit-learn, OpenCV, Linux, Git"
         summary: >
-          Desarrollo de un trabajo de investigación de tesis de grado, enfocado en la segmentación de imágenes satelitales
-          para la detección y estimación de daños en edificaciones posteriores a desastres naturales, mediante comparación temporal
-          de imágenes y modelos de deep learning con arquitectura siamesa.
+          Tesis sobre evaluación de daños en edificios tras desastres naturales con imágenes satelitales:
+          una U-Net siamesa multitarea que segmenta edificios y clasifica su daño en 4 niveles a partir
+          de imágenes previas y posteriores al desastre ([código](https://github.com/MrtC101/Thesis_DL_for_BDA)
+          · [tesis](https://bdigital.uncu.edu.ar/fichas.php?idobjeto=20482)).
         highlights:
-        - "**Dataset xBD**: Entrenamiento sobre ~2400 imágenes satelitales VHR para tareas de Building Damage Assessment."
-        - "**Pipeline end-to-end**: Preprocesamiento, entrenamiento, inferencia y post-procesamiento para segmentación semántica y detección de cambios estructurales multitemporales."
-        - "**Modelado de visión**: Entrenamiento de modelos de deep learning para segmentación semántica de edificaciones post-desastre."
-        - "**Evaluación experimental**: Análisis cuantitativo mediante métricas de clasificación y segmentación (Precision, Recall, F1-score)."
-        - "**Cómputo**: Entrenamiento ejecutado en clúster HPC con GPU NVIDIA Tesla V100."
-        - "[Ver Proyecto](https://github.com/MrtC101/Thesis_DL_for_BDA) · [Ver Tesis](https://bdigital.uncu.edu.ar/fichas.php?idobjeto=20482)"
-    
+          - "**Pipeline completo**: Preprocesamiento, entrenamiento, inferencia y post-procesamiento sobre ~3000 imágenes satelitales VHR del dataset xBD, con una estrategia propia de muestreo greedy para balancear las clases de daño."
+          - "**Resultados**: F1 de 0,80 en segmentación de edificios sobre el conjunto de test, con evaluación a nivel de píxel y de objeto."
+          - "**Cómputo**: Entrenamiento en un clúster HPC con GPUs NVIDIA Tesla V100."
+
     habilidades_técnicas:
       - label: Lenguajes
         key: languages
-        details: Python, TypeScript, C++, Rust
+        details: Python, TypeScript/JavaScript, C/C++
+      - label: Visión e Inferencia
+        details: GStreamer, DeepStream, TensorRT, CUDA, ONNX, OpenCV
       - label: IA & ML
-        details: PyTorch, Scikit-learn, Ultralytics, Anomalib
-      - label: Visión & Datos
-        details: OpenCV, CUDA, GStreamer, Pandas, NumPy
+        details: PyTorch, Ultralytics, Anomalib, Scikit-learn, Pandas, NumPy
       - label: Backend, APIs REST y Web
-        details: FastAPI, Nginx, React, Tailwind, Bun
+        details: FastAPI, ZMQ, Nginx, React, Tailwind
       - label: Bases de Datos
-        details: SQLite, Redis, MongoDB
+        details: Redis, SQLite, MongoDB
       - label: DevOps y Herramientas
-        details: Docker, Linux, Git
+        details: Docker, k3s, Helm, Linux, Git
 
     educación:
       - institution: Universidad Nacional de Cuyo
         area: Licenciatura en Ciencias de la Computación
-        study_type: Grado (Promedio 8.7)
+        study_type: Grado (Promedio 8,7)
         start_date: 2020
         end_date: 2024
         logo: facultad_de_ingenieria_uncuyo_logo
 
     premios:
-      - bullet: "Medalla a mejor promedio promocion 2024 de la carrera Licenciatura en ciencias de la computación."
-      - bullet: "Cuadro de honor (Top 15 promedios): Facultad de Ingeniería UNCUYO, 2024."
+      - bullet: "Medalla al mejor promedio de la promoción 2024 de la Licenciatura en Ciencias de la Computación."
+      - bullet: "Cuadro de honor (top 15 promedios) de la Facultad de Ingeniería, UNCUYO, 2024."
 
     idiomas:
       - bullet: "Español: Nativo."
@@ -122,6 +112,12 @@ design:
   sections:
     show_time_spans_in: []
     space_between_regular_entries: 0.55cm
+
+  # Dates live in the main column (see templates), so the right-hand
+  # date/location column is always empty: give its width back to the text.
+  entries:
+    date_and_location_width: 0cm
+    space_between_columns: 0cm
 
   page:
     show_footer: false
