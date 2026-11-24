@@ -78,7 +78,7 @@ cv:
     technical_skills:
       - label: Programming Languages
         details: Python, TypeScript
-      - label: Academic Languages
+      - label: Additional Languages
         details: Java, C, C++
       - label: Computer Vision & Inference
         details: GStreamer, DeepStream, TensorRT, CUDA, ONNX, OpenCV
