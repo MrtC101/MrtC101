@@ -78,8 +78,9 @@ cv:
 
     habilidades_técnicas:
       - label: Lenguajes
-        key: languages
-        details: Python, TypeScript/JavaScript, C/C++
+        details: Python, TypeScript
+      - label: Lenguajes (académico)
+        details: Java, C, C++
       - label: Visión e Inferencia
         details: GStreamer, DeepStream, TensorRT, CUDA, ONNX, OpenCV
       - label: IA & ML

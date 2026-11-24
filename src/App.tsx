@@ -8,14 +8,13 @@ import {
 import './App.css'
 import { parseContent, type Lang } from './lib/parser'
 import { getSocialConfig } from './lib/social'
-import { sectionTitles, ui, proficiencyLevels } from './lib/i18n'
+import { sectionTitles, ui } from './lib/i18n'
 import { renderInline } from './lib/markdown'
 import { Button } from '@/components/ui/button'
 import { BuiltWithClaude } from '@/components/cv/BuiltWithClaude'
 import { Section } from '@/components/cv/Section'
 import { SidebarSection } from '@/components/cv/SidebarSection'
 import { SkillBadge } from '@/components/cv/SkillBadge'
-import { LanguageProficiency } from '@/components/cv/LanguageProficiency'
 import { ExperienceItem } from '@/components/cv/ExperienceItem'
 import { EducationItem } from '@/components/cv/EducationItem'
 import { ContactLink } from '@/components/cv/ContactLink'
@@ -97,19 +96,11 @@ function App() {
               {sections.technical_skills.map((group) => (
                 <div key={group.label}>
                   <h4 className="mb-2 text-sm font-semibold text-foreground">{group.label}</h4>
-                  {group.key === 'languages' ? (
-                    <LanguageProficiency
-                      languages={group.details.split(', ')}
-                      levelLabels={proficiencyLevels[lang]}
-                      note={strings.languageConfidenceNote}
-                    />
-                  ) : (
-                    <div className="flex flex-wrap gap-2">
-                      {group.details.split(', ').map((skill) => (
-                        <SkillBadge key={skill} label={skill} size="sm" />
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {group.details.split(', ').map((skill) => (
+                      <SkillBadge key={skill} label={skill} size="sm" />
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

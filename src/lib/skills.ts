@@ -3,8 +3,7 @@
 // Skills without a matching asset simply render without an icon.
 export const SKILL_ICON_SLUGS: Record<string, string> = {
   Python: 'python',
-  'TypeScript/JavaScript': 'typescript',
-  'C/C++': 'c-plusplus',
+  C: 'c-plusplus',
   'C++': 'c-plusplus',
   PyTorch: 'pytorch',
   'Scikit-learn': 'scikit-learn',
